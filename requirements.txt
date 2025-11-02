@@ -1,0 +1,32 @@
+# Jupyter and notebooks
+jupyter==1.0.0
+notebook==7.0.6
+ipywidgets==8.1.1
+
+# PySpark (don't install, use SPARK_HOME)
+findspark==2.0.1
+
+# Data manipulation
+pandas==2.1.4
+numpy==1.26.2
+pyarrow==14.0.1
+
+# Financial data (specific versions that work)
+yfinance==0.2.36
+requests==2.31.0
+urllib3==2.1.0
+lxml==5.1.0
+html5lib==1.1
+
+# Hugging Face datasets
+datasets==2.15.0
+huggingface-hub==0.20.0
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Utilities
+tqdm==4.66.1
+beautifulsoup4==4.12.2
+python-dotenv==1.0.0

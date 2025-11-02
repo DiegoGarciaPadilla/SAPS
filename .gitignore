@@ -1,0 +1,33 @@
+# Environment variables
+notebooks/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Data files
+*.csv
+*.parquet
+*.json
+*.pkl
+*.pickle
+
+# Spark
+metastore_db/
+derby.log
+spark-warehouse/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDEA
+.idea

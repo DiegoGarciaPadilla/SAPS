@@ -1,0 +1,53 @@
+services:
+  saps-jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: saps-pyspark-jupyter
+    hostname: saps-master
+
+    # Add network mode
+    network_mode: bridge
+
+    # Add DNS servers
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+    deploy:
+      resources:
+        limits:
+          cpus: '6'
+          memory: 12G
+        reservations:
+          cpus: '2'
+          memory: 4G
+
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+      - "4041:4041"
+
+    volumes:
+      - ./notebooks:/workspace/notebooks
+      - ./data:/workspace/data
+      - ./scripts:/workspace/scripts
+      - spark-tmp:/tmp/spark
+
+    environment:
+      - SPARK_MASTER=local[*]
+      - SPARK_DRIVER_MEMORY=6g
+      - SPARK_EXECUTOR_MEMORY=3g
+      - SPARK_DRIVER_MAX_RESULT_SIZE=3g
+      - PYSPARK_SUBMIT_ARGS=--driver-memory 6g --executor-memory 3g pyspark-shell
+      # Add these for better network handling
+      - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+      - CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+
+volumes:
+  spark-tmp:
+    driver: local
