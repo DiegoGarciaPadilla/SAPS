@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Starting SAPS Environment..."
+echo "🚀 Starting Environment..."
 echo "================================"
 
 # Find Java installation dynamically

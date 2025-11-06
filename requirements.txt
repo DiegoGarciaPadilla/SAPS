@@ -6,8 +6,16 @@ ipywidgets==8.1.1
 # PySpark (don't install, use SPARK_HOME)
 findspark==2.0.1
 
-# SciKit Learn
+# Machine Learning - Traditional
 scikit-learn==1.7.2
+
+# Deep Learning - TensorFlow/Keras
+tensorflow==2.15.0
+keras==2.15.0
+
+# NLP & Transformers
+transformers==4.36.0
+tokenizers==0.15.0
 
 # Data manipulation
 pandas==2.1.4
@@ -31,6 +39,14 @@ kagglehub==0.3.13
 # Visualization
 matplotlib==3.8.2
 seaborn==0.13.0
+plotly==5.18.0
+
+# Text processing
+nltk==3.8.1
+spacy==3.7.2
+
+# Model evaluation & metrics
+tensorboard==2.15.0
 
 # Utilities
 tqdm==4.66.1

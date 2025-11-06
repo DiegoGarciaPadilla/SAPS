@@ -1,5 +1,5 @@
 services:
-  saps-jupyter:
+  yelp-jupyter:
     build:
       context: .
       dockerfile: Dockerfile
@@ -36,10 +36,10 @@ services:
 
     environment:
       - SPARK_MASTER=local[*]
-      - SPARK_DRIVER_MEMORY=8g
-      - SPARK_EXECUTOR_MEMORY=4g
+      - SPARK_DRIVER_MEMORY=12g
+      - SPARK_EXECUTOR_MEMORY=8g
       - SPARK_DRIVER_MAX_RESULT_SIZE=4g
-      - PYSPARK_SUBMIT_ARGS=--driver-memory 8g --executor-memory 4g pyspark-shell
+      - PYSPARK_SUBMIT_ARGS=--driver-memory 12g --executor-memory 8g --conf spark.driver.maxResultSize=4g pyspark-shell
       # Add these for better network handling
       - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
       - CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
