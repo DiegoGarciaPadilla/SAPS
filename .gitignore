@@ -18,6 +18,7 @@ __pycache__/
 *.json
 *.pkl
 *.pickle
+data/
 
 # Spark
 metastore_db/
